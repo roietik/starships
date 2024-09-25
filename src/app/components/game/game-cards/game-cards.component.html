@@ -1,0 +1,7 @@
+<div class="card-container">
+    <game-card-starship *ngIf="type === 'starships'" [item]="items[0]" color="red"></game-card-starship>
+    <game-card-people *ngIf="type === 'people'" [item]="items[0]" color="red"></game-card-people>
+    <game-card-winner class="center-card" [scores]="scores"></game-card-winner>
+    <game-card-starship *ngIf="type === 'starships'" [item]="items[1]" color="blue"></game-card-starship>
+    <game-card-people *ngIf="type === 'people'" [item]="items[1]" color="blue"></game-card-people>
+</div>
