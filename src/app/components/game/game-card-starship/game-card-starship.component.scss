@@ -1,0 +1,33 @@
+.item-card {
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 400px;
+
+  .item-card-footer {
+    padding: 16px;
+  }
+}
+
+.blue-card {
+  border-color: blue;
+}
+
+.red-card {
+  border-color: red;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.bold-item {
+  font-weight: bold;
+}
+
+.content-item {
+  margin-top: 10px;
+}

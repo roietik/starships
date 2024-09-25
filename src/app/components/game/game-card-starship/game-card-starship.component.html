@@ -1,0 +1,21 @@
+<mat-card class="item-card"
+          [ngClass]="color + '-card'"
+          appearance="outlined">
+    <mat-card-header>
+        <mat-card-title><span class="bold-item">Name:</span> {{ item.name }}</mat-card-title>
+        <mat-card-subtitle><span class="bold-item">Model:</span> {{ item.model }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="content-item"><span class="bold-item">Manufacturer</span>: {{ item.manufacturer }}</p>
+        <p class="content-item"><span class="bold-item">Starship class:</span> {{ item.starship_class }}</p>
+    </mat-card-content>
+    <mat-card-footer class="item-card-footer">
+        <mat-chip-set>
+            <mat-chip>Cost: {{ item.cost_in_credits }} credits</mat-chip>
+            <mat-chip>Length: {{ item.length }}</mat-chip>
+            <mat-chip><span [ngClass]="color + '-text'">Crew: {{ item.crew }}</span></mat-chip>
+            <mat-chip>Passengers: {{ item.passengers }}</mat-chip>
+            <mat-chip>Speed: {{ item.max_atmosphering_speed }}</mat-chip>
+        </mat-chip-set>
+    </mat-card-footer>
+</mat-card>
