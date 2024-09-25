@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="menu-container">
+        <mat-form-field class="source-select">
+            <mat-label>Select type</mat-label>
+            <mat-select [(ngModel)]="selectedType">
+                <mat-option *ngFor="let type of typeOptions" [value]="type">
+                    {{ type }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button (click)="playGame()" class="play-button" mat-fab extended>
+            Play
+        </button>
+    </div>
+
+    <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+    <ng-container *ngIf="items$ | async as items">
+        <game-cards [items]="items" [type]="type"></game-cards>
+    </ng-container>
+</div>
