@@ -1,0 +1,25 @@
+<mat-card class="item-card"
+          [ngClass]="color + '-card'"
+          appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>
+            <span class="bold-item">Name:</span> {{ item.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+            <span class="bold-item">Gender:</span> {{ item.gender }}
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-footer class="item-card-footer">
+        <mat-chip-set>
+            <mat-chip>Height: {{ item.height }} credits</mat-chip>
+            <mat-chip>
+                <span [ngClass]="color + '-text'">
+                    Mass: {{ item.mass }}
+                </span>
+            </mat-chip>
+            <mat-chip>Birth year: {{ item.birth_year }}</mat-chip>
+            <mat-chip>Eye color: {{ item.eye_color }}</mat-chip>
+        </mat-chip-set>
+    </mat-card-footer>
+</mat-card>
