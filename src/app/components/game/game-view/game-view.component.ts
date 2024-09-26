@@ -53,7 +53,7 @@ export class GameViewComponent  {
             this.gameService.getItem<IGameItem>(response[1].url)
           ])
             .pipe(
-              finalize(() => this.loading = true)
+              finalize(() => this.loading = false)
             );
         })
       );
