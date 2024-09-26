@@ -3,7 +3,7 @@ import {GameCardsComponent} from './game-cards.component';
 import {provideHttpClient} from '@angular/common/http';
 import {IPerson, IStarship} from '../../../services/game/game.interfaces';
 
-const starshipsMock: IStarship[] = [
+export const starshipsMock: IStarship[] = [
   {
     model: 'DS-1 Orbital Battle Station',
     starship_class: 'Deep Space Mobile Battlestation',
@@ -43,7 +43,7 @@ const starshipsMock: IStarship[] = [
     url: 'https://www.swapi.tech/api/starships/12'
   },
 ];
-const peopleMock: IPerson[] = [
+export const peopleMock: IPerson[] = [
   {
     height: '172',
     mass: '77',
@@ -82,7 +82,7 @@ describe('GameCardsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ GameCardsComponent ],
-      providers: [provideHttpClient()]
+      providers: [ provideHttpClient() ]
     })
       .compileComponents();
 
