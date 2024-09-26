@@ -43,10 +43,10 @@ export class GameViewComponent  {
   }
 
   playGame(): void {
+    this.loading = true;
     this.type = this.selectedType;
     this.items$ = this.gameService.getItems(this.selectedType)
       .pipe(
-        tap(() => this.loading = true),
         switchMap((response) => {
           return combineLatest([
             this.gameService.getItem<IGameItem>(response[0].url),
