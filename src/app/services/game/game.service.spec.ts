@@ -249,7 +249,6 @@ describe('GameService', () => {
   it('should get getItems() with success', () => {
     httpClientSpy.get.and.returnValue(of(responseItemsMockup));
     service.getItems('starships').subscribe((data) => {
-      console.log('data:', data);
       expect(Array.isArray(data)).toBe(true);
 
       data.forEach((item) => {
