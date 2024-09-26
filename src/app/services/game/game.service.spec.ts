@@ -4,7 +4,7 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
 import {provideHttpClientTesting} from '@angular/common/http/testing';
 import {of} from 'rxjs';
 
-const responseItemsMockup = {
+export const responseItemsMockup = {
   message: "ok",
   total_records: 36,
   total_pages: 1,
@@ -193,7 +193,7 @@ const responseItemsMockup = {
     }
   ]
 };
-const responseItemMockup = {
+export const responseItemMockup = {
   message: "ok",
   result: {
     properties: {
@@ -276,6 +276,7 @@ describe('GameService', () => {
 
   it('should get getItems() with success', () => {
     httpClientSpy.get.and.returnValue(of(responseItemsMockup));
+
     service.getItems('starships').subscribe((data) => {
       expect(Array.isArray(data)).toBe(true);
 
@@ -287,10 +288,12 @@ describe('GameService', () => {
         });
       });
     });
+
     expect(httpClientSpy.get).toHaveBeenCalledTimes(1);
+    expect(httpClientSpy.get).toHaveBeenCalledWith('https://www.swapi.tech/api/starships?page=1&limit=100');
   });
 
-  it('should get getItem() with success', () => {
+    it('should get getItem() with success', () => {
     httpClientSpy.get.and.returnValue(of(responseItemMockup));
     service.getItem('starships').subscribe((data) => {
       expect(typeof data === 'object').toBe(true);
